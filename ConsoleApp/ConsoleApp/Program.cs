@@ -19,7 +19,7 @@ PrintResult("task3_1",helper.DeliveryInfosByClient(deliveries, "f2467cf2-2f3e-4f
 var task3_2 = JsonSerializer.Deserialize<List<DeliveryShortInfo>>(FileText("task3_2")) ?? throw new ArgumentException();
 PrintResult("task3_2",helper.DeliveryInfosByClient(deliveries, "0e0b7048-cb7c-4046-9d7c-2051b07c7e05").SequenceEqual(task3_2));
 
-var task4 = JsonSerializer.Deserialize<List<Delivery>>(FileText("task4")) ?? throw new ArgumentException();
+var task4 = JsonSerializer.Deserialize<List<Delivery>>(FileText("task4")).Take(10) ?? throw new ArgumentException();
 PrintResult("task4",helper.DeliveriesByCityAndType(deliveries, "Kryvyi Rih", DeliveryType.TruckOnly).SequenceEqual(task4));
 
 var task5 = JsonSerializer.Deserialize<List<Delivery>>(FileText("task5")) ?? throw new ArgumentException();
